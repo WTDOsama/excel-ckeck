@@ -1,0 +1,44 @@
+interface Props {
+  className?: string;
+}
+
+export function LogoMark({ className }: Props) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Excel Compare & Audit"
+    >
+      <defs>
+        <linearGradient id="lgo-bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#0c4a8c" />
+          <stop offset="1" stopColor="#0d8c84" />
+        </linearGradient>
+        <linearGradient id="lgo-acc" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#6d3fc1" />
+          <stop offset="1" stopColor="#5aa9ff" />
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#lgo-bg)" />
+      {/* Grid lines to evoke a spreadsheet */}
+      <g stroke="rgba(255,255,255,0.18)" strokeWidth="1">
+        <line x1="14" y1="6" x2="14" y2="42" />
+        <line x1="24" y1="6" x2="24" y2="42" />
+        <line x1="34" y1="6" x2="34" y2="42" />
+        <line x1="6" y1="16" x2="42" y2="16" />
+        <line x1="6" y1="26" x2="42" y2="26" />
+        <line x1="6" y1="36" x2="42" y2="36" />
+      </g>
+      {/* Filled cells */}
+      <rect x="6" y="6" width="8" height="10" rx="1.5" fill="url(#lgo-acc)" />
+      <rect x="24" y="16" width="10" height="10" rx="1.5" fill="rgba(255,255,255,0.85)" />
+      <rect x="14" y="26" width="10" height="10" rx="1.5" fill="url(#lgo-acc)" />
+      <rect x="34" y="36" width="8" height="6" rx="1.5" fill="rgba(255,255,255,0.7)" />
+      {/* Magnifier overlay */}
+      <circle cx="36" cy="12" r="6" stroke="white" strokeWidth="2" fill="rgba(13,140,132,0.7)" />
+      <line x1="40" y1="16" x2="44" y2="20" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
